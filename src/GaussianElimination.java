@@ -17,8 +17,12 @@ public class GaussianElimination {
                 {4,6,8}
         };
         double[][] matrix = normalMatrix;
-        gaussianEliminate(matrix, 0);
+        gaussianEliminate(matrix);
         IO.printMatrix(matrix);
+    }
+
+    public static void gaussianEliminate(double[][] matrix) throws Exception {
+        gaussianEliminate(matrix, 0);
     }
 
     public static void gaussianEliminate(double[][] matrix, int subMatrixIndex) throws Exception {
@@ -53,5 +57,4 @@ public class GaussianElimination {
         }
         throw new Exception("matrix cannot be gaussian eliminated: singular form");
     }
-
 }

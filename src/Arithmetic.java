@@ -1,6 +1,23 @@
 import java.util.Arrays;
 
 public class Arithmetic {
+    public static double[][] plus(double[][] m1, double[][] m2) throws Exception {
+        if (!(m1.length == m2.length && m1[0].length == m2[0].length)) {
+            throw new Exception("Matrix addition error: matrices inconsistency.");
+        }
+        double[][] matrix = new double[m1.length][m1[0].length];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                matrix[i][j] = m1[i][j] + m2[i][j];
+            }
+        }
+        return matrix;
+    }
+
+    public static double[][] minus(double[][] m1, double[][] m2) throws Exception {
+        return plus(m1, times(m2, -1));
+    }
+
     public static double[][] times(double[][] matrix, double c) {
         double[][] newMatrix = matrix.clone();
         for (int i = 0; i < newMatrix.length; i++) {
