@@ -52,4 +52,14 @@ public class Arithmetic {
         }
         return sum;
     }
+
+    public static double[][] transpose(double[][] matrix) {
+        double[][] matrixTranspose = new double[matrix[0].length][matrix.length];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                matrixTranspose[j][i] = matrix[i][j];
+            }
+        }
+        return matrixTranspose;
+    }
 }
